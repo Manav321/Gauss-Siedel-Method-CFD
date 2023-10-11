@@ -1,0 +1,17 @@
+% order of matrix nxn
+n = 20; 
+
+% Defining matrix 
+mat_A = zeros(n, n);
+mat_B = zeros(n ,1);
+
+% Inputting the values in matrix A and B
+for i=1:n
+    for j=1:n
+        if i==1 && j==1
+            mat_A(i,j) = 2;
+            mat_A(i, j+1) = -1;
+        elseif i==j && i>=2 && i<=n-
+        end    
+    end
+end    
