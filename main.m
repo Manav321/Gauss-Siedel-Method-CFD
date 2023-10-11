@@ -51,7 +51,7 @@ while R_rms > thresshold
             R(i) = mat_B(i) - (-mat_X(i-1) + 2*mat_X(i) - mat_X(i+1));
         end
 
-        mat_X = mat_X + (w*R(i))/2;
+        mat_X(i) = mat_X(i) + (w*R(i))/2;
         R_rms = R_rms + R(i)^2;
         
     end
