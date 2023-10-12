@@ -27,13 +27,13 @@ mat_A = zeros(n, n);
 mat_B = zeros(n ,1);
 mat_X = zeros(n, 1);
 
-a = 2; % diagonal element of matrix A
-R_rms = 1;
-R = zeros(1, n);
-w = 1; % relaxation factor
-thresshold = 1e-6;
-E = []; % array to store R_rms to plot
-count = 0; % to count iterations
+a = 2;              % diagonal element of matrix A
+R_rms = 1;          % defining as 1 to initiate while loop
+R = zeros(1, n); 
+w = 1;              % relaxation factor
+error = 1e-6;   
+E = [];             % array to store R_rms to plot
+count = 0;          % to count iterations
 
 % Inputting values of matrix A
 for i=1:n
@@ -60,7 +60,7 @@ end
 mat_B(n,1) = 1;
 
 
-while R_rms > thresshold
+while R_rms > error
 
     R_rms = 0.0;
     
@@ -83,7 +83,10 @@ while R_rms > thresshold
     E = [E, R_rms];
     count = count + 1;
     
-    % you can comment the next 2 lines for fast runtime
+    % you can comment the next lines for fast runtime
     plot(E, '-r*');
+    grid on;
+    xlabel("Iterations");
+    ylabel("RMS")
     drawnow;
 end
